@@ -11,7 +11,7 @@ console.log(myname);
 
 let myAge: string | number;
 
-myAge = 16;//narrowing
+myAge = 16; //narrowing
 console.log(myAge);
 
 //console.log(myAge.toLowerCase());//Error
@@ -25,11 +25,11 @@ console.log(myAge.toString()); // common to both types
 console.log(myAge.toLowerCase());//Can be called on string 
                                 //because of narrowing
 
-let newAge = Math.random() > 0.6 ? "Khan": 60;
+let newAge = Math.random() > 0.6 ? "Aun": 60;
 
 //newAge.toLowerCase();//Error: Transpiler cannot narrow
 
-if (newAge === "Khan") {
+if (newAge === "Aun") {
     // Type of newAge: string
     newAge.toUpperCase(); // Can be called
 }
@@ -45,28 +45,22 @@ typeof newAge === "string"
 
 
 let age: number | "died" | "unknown";
+age = 90; //OK
+age = "died"; //OK
+age = "unknown"; //OK
+//age = "living"; //Error
 
-age = 90;//OK
-age = "died";//OK
-age = "unknown";//OK
-//age = "living";//Error
-
-
-let zia: "zia";
-
-zia = "zia";
-//zia = "khan";//Error
+let Aun: "Aun";
+Aun = "Aun";
+//Aun = "khan";//Error
 
 
-let yourName = Math.random() > 0.6 ? "Hira Khan": undefined;
-
+let yourName = Math.random() > 0.6 ? "Aun Zaidi": undefined;
 if (yourName) {
     yourName.toUpperCase(); // Ok: string
 }
-
-//yourName.toUpperCase();//Error: Object is possibly 'undefined'.
-
-yourName?.toUpperCase();//OK
+yourName.toUpperCase(); //Error: Object is possibly 'undefined'.
+yourName?.toUpperCase(); //OK
 
 // You can also define a type alias
 type RawData = boolean | number | string | null | undefined;

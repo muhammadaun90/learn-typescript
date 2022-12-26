@@ -29,5 +29,3 @@ interface Manager {
 let storeManager: Manager = {
     name: "Bilal"
 }
-
-        
